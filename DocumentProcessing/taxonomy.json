@@ -206,6 +206,96 @@
           ]
         },
         {
+          "FieldId": "CGI.MailRoom.Claims.Insured'sName",
+          "FieldName": "Insured's Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.Insured'sAddress",
+          "FieldName": "Insured's Address",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.Insured'sCity",
+          "FieldName": "Insured's City",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.Insured'sState",
+          "FieldName": "Insured's State",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.Insured'sZipCode",
+          "FieldName": "Insured's Zip Code",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.Insured'sTelephone",
+          "FieldName": "Insured's Telephone",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
           "FieldId": "CGI.MailRoom.Claims.InsuredPolicyGrouporFECA#",
           "FieldName": "Insured Policy Group or FECA #",
           "IsMultiValue": false,
@@ -238,6 +328,21 @@
         {
           "FieldId": "CGI.MailRoom.Claims.InsurancePlanNameorProgramName",
           "FieldName": "Insurance Plan Name or Program Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.PriorAuthorizationNumber",
+          "FieldName": "Prior Authorization Number",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -302,37 +407,6 @@
           "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
-          "SetValues": [],
-          "Metadata": [
-            {
-              "Key": "RequiresReference",
-              "Value": "true"
-            }
-          ]
-        },
-        {
-          "FieldId": "CGI.MailRoom.Claims.Test",
-          "FieldName": "Test",
-          "IsMultiValue": false,
-          "Type": "Table",
-          "DeriveFieldsFormat": "",
-          "Components": [
-            {
-              "FieldId": "CGI.MailRoom.Claims.Test.Charges",
-              "FieldName": "Charges",
-              "IsMultiValue": false,
-              "Type": "Text",
-              "DeriveFieldsFormat": "",
-              "Components": [],
-              "SetValues": [],
-              "Metadata": [
-                {
-                  "Key": "RequiresReference",
-                  "Value": "true"
-                }
-              ]
-            }
-          ],
           "SetValues": [],
           "Metadata": [
             {
