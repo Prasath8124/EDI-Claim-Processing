@@ -371,6 +371,99 @@
           ]
         },
         {
+          "FieldId": "CGI.MailRoom.Claims.Charges",
+          "FieldName": "Charges",
+          "IsMultiValue": false,
+          "Type": "Table",
+          "DeriveFieldsFormat": "",
+          "Components": [
+            {
+              "FieldId": "CGI.MailRoom.Claims.Charges.Charges",
+              "FieldName": "Charges",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [
+                {
+                  "Key": "RequiresReference",
+                  "Value": "true"
+                }
+              ]
+            }
+          ],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.CPTHCPCS",
+          "FieldName": "CPT-HCPCS",
+          "IsMultiValue": false,
+          "Type": "Table",
+          "DeriveFieldsFormat": "",
+          "Components": [
+            {
+              "FieldId": "CGI.MailRoom.Claims.CPTHCPCS.CPTHCPCS",
+              "FieldName": "CPT-HCPCS",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [
+                {
+                  "Key": "RequiresReference",
+                  "Value": "true"
+                }
+              ]
+            }
+          ],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.RenderingProviderID#",
+          "FieldName": "RP ID #",
+          "IsMultiValue": false,
+          "Type": "Table",
+          "DeriveFieldsFormat": "",
+          "Components": [
+            {
+              "FieldId": "CGI.MailRoom.Claims.RenderingProviderID#.RenderingProviderID#",
+              "FieldName": "RP ID #",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [
+                {
+                  "Key": "RequiresReference",
+                  "Value": "true"
+                }
+              ]
+            }
+          ],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
           "FieldId": "CGI.MailRoom.Claims.FederalTaxIDNumber",
           "FieldName": "Federal Tax ID Number",
           "IsMultiValue": false,
@@ -386,9 +479,84 @@
           ]
         },
         {
-          "FieldId": "CGI.MailRoom.Claims.Box24",
-          "FieldName": "Date of Service(From)",
-          "IsMultiValue": true,
+          "FieldId": "CGI.MailRoom.Claims.SSN-EIN",
+          "FieldName": "SSN-EIN",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.PatientAccountNo",
+          "FieldName": "Patient Account No.",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.AcceptAssignment",
+          "FieldName": "Accept Assignment",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.TotalCharge",
+          "FieldName": "Total Charge",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.AmountPaid",
+          "FieldName": "Amount Paid",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.BalanceDue",
+          "FieldName": "Balance Due",
+          "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
@@ -404,6 +572,36 @@
           "FieldId": "CGI.MailRoom.Claims.ServiceFacilityLocation",
           "FieldName": "Service Facility Location",
           "IsMultiValue": true,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.BillingProviderPhone#",
+          "FieldName": "Billing Provider Phone #",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "CGI.MailRoom.Claims.BillingProviderInfo",
+          "FieldName": "Billing Provider Info",
+          "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
