@@ -16,7 +16,8 @@
     "UiPath.OmniPage.Activities": "[1.7.0]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.5]",
-    "UiPath.Vision": "[2.2.0]"
+    "UiPath.Vision": "[2.2.0]",
+    "UiPath.WebAPI.Activities": "[1.6.0]"
   },
   "webServices": [],
   "entitiesStores": [],
