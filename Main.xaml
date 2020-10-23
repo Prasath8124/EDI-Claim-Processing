@@ -103,7 +103,11 @@
   <Sequence DisplayName="Document Processing" sap:VirtualizedContainerService.HintSize="798,1164.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="p8:DocumentTaxonomy" Name="Taxonomy" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\giris\Documents\UiPath\EDI Claims Processing\Report_1020.xlsx" Name="Docpath" />
+      <Variable x:TypeArguments="x:String" Name="Docpath">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\giris\Documents\UiPath\EDI Claims Processing\Report_&quot; +datetime.now.ToString(&quot;MM-dd&quot;) +&quot;.xlsx&quot;" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="DigiTxt" />
       <Variable x:TypeArguments="p3:Document" Name="Digidom" />
       <Variable x:TypeArguments="p6:ClassificationResult[]" Name="OP_Classify" />
@@ -116,7 +120,11 @@
       <Variable x:TypeArguments="sd1:DataTable" Name="Outputdt" />
       <Variable x:TypeArguments="x:String" Name="StrJSON" />
       <Variable x:TypeArguments="sd1:DataTable" Name="SelectedRPIDColumn" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\giris\Documents\UiPath\EDI Claims Processing\Final_1020.xlsx" Name="FinalPath" />
+      <Variable x:TypeArguments="x:String" Name="FinalPath">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\giris\Documents\UiPath\EDI Claims Processing\Final_&quot; +datetime.now.ToString(&quot;MM-dd&quot;) +&quot;.xlsx&quot;" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="sd1:DataTable" Name="CPTHCPCSCol" />
       <Variable x:TypeArguments="sd1:DataTable" Name="SelectedCPTHCPCSColumn" />
       <Variable x:TypeArguments="sd1:DataTable" Name="FinalDT" />
@@ -167,7 +175,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:String" Name="File" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="520,2328" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence sap:VirtualizedContainerService.HintSize="520,2326" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="Json" />
                   <Variable x:TypeArguments="x:String" Name="GoogleCloudOCRTxt" />
@@ -202,7 +210,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </p:DigitizeDocument>
-                <ui:CommentOut DisplayName="Comment Out - Digi Txt" sap:VirtualizedContainerService.HintSize="478,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                <ui:CommentOut DisplayName="Comment Out - Digi Txt" sap:VirtualizedContainerService.HintSize="478,52" sap2010:WorkflowViewState.IdRef="CommentOut_13">
                   <ui:CommentOut.Body>
                     <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,227.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_20">
                       <sap:WorkflowViewStateService.ViewState>
@@ -227,7 +235,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
-                <ui:CommentOut DisplayName="Comment Out - Write Google OCR Txt output" sap:VirtualizedContainerService.HintSize="478,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                <ui:CommentOut DisplayName="Comment Out - Write Google OCR Txt output" sap:VirtualizedContainerService.HintSize="478,52" sap2010:WorkflowViewState.IdRef="CommentOut_17">
                   <ui:CommentOut.Body>
                     <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_27">
                       <sap:WorkflowViewStateService.ViewState>
@@ -251,7 +259,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
-                <p1:ClassifyDocumentScope ClassificationResults="[OP_Classify]" DisplayName="Classify Document Scope" DocumentObjectModel="[Digidom]" DocumentPath="[File]" DocumentText="[DigiTxt]" sap:VirtualizedContainerService.HintSize="478,68.6666666666667" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_3" Taxonomy="[Taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI7379140c68a44e70bde0ccc0de51d069&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;CGI.MailRoom.Invoice&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;CGI.MailRoom.Invoice&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;CGI.MailRoom.Claims&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;CGI.MailRoom.Claims&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI7379140c68a44e70bde0ccc0de51d069&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{}}">
+                <p1:ClassifyDocumentScope ClassificationResults="[OP_Classify]" DisplayName="Classify Document Scope" DocumentObjectModel="[Digidom]" DocumentPath="[File]" DocumentText="[DigiTxt]" sap:VirtualizedContainerService.HintSize="478,68" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_3" Taxonomy="[Taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI7379140c68a44e70bde0ccc0de51d069&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;CGI.MailRoom.Invoice&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;CGI.MailRoom.Invoice&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;CGI.MailRoom.Claims&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;CGI.MailRoom.Claims&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI7379140c68a44e70bde0ccc0de51d069&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{}}">
                   <p1:ClassifyDocumentScope.Classifiers>
                     <p1:KeywordBasedClassifier HumanValidatedData="{x:Null}" LearningData="{x:Null}" DisplayName="Keyword Based Classifier" sap:VirtualizedContainerService.HintSize="234,114.666666666667" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifier_3" LearningFilePath="EDI.json" PersistenceId="UI7379140c68a44e70bde0ccc0de51d069">
                       <p1:KeywordBasedClassifier.ClassifierResult>
@@ -305,7 +313,7 @@
                 </p1:ClassifyDocumentScope>
                 <p4:DataExtractionScope DocumentTypeId="{x:Null}" ClassificationResult="[OP_Classify(0)]" DisplayName="Data Extraction Scope" DocumentObjectModel="[Digidom]" DocumentPath="[File]" DocumentText="[DigiTxt]" ExtractionResult="[ExtractionResults]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="478,492" sap2010:WorkflowViewState.IdRef="DataExtractionScope_3" Taxonomy="[Taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIdf96b1ddebb04d159b2d92cd84d66efe&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;CGI.MailRoom.Invoice&quot;:{&quot;FieldMappings&quot;:{&quot;CGI.MailRoom.Invoice.InvoiceNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Invoice.InvoiceNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;CGI.MailRoom.Invoice.InvoiceDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Invoice.InvoiceDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;CGI.MailRoom.Invoice.AmtDure&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Invoice.AmtDure&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;CGI.MailRoom.Claims&quot;:{&quot;FieldMappings&quot;:{&quot;CGI.MailRoom.Claims.InsuredID&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.InsuredID&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Name(LastName,FirstName,MiddleInitial)&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Name(LastName,FirstName,MiddleInitial)&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientDOB&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientDOB&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientAddress&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientAddress&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientCity&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientCity&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientState&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientState&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientZip&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientZip&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientTelephone&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientTelephone&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientRelationshiptoInsured&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientRelationshiptoInsured&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Insured'sName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Insured'sName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Insured'sAddress&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Insured'sAddress&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Insured'sCity&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Insured'sCity&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Insured'sState&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Insured'sState&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Insured'sZipCode&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Insured'sZipCode&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Insured'sTelephone&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Insured'sTelephone&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.InsuredPolicyGrouporFECA#&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.InsuredPolicyGrouporFECA#&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Employer'sNameorSchoolName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Employer'sNameorSchoolName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.InsurancePlanNameorProgramName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.InsurancePlanNameorProgramName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PriorAuthorizationNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PriorAuthorizationNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.DiagnosisorNatureofIllnessorInjury&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.DiagnosisorNatureofIllnessorInjury&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Charges&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Charges&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.Charges.Charges&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.Charges.Charges&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.CPTHCPCS&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.CPTHCPCS&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.CPTHCPCS.CPTHCPCS&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.CPTHCPCS.CPTHCPCS&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.RenderingProviderID#&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.RenderingProviderID#&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.RenderingProviderID#.RenderingProviderID#&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.RenderingProviderID#.RenderingProviderID#&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.FederalTaxIDNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.FederalTaxIDNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.SSN-EIN&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.SSN-EIN&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.PatientAccountNo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.PatientAccountNo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.AcceptAssignment&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.AcceptAssignment&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.TotalCharge&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.TotalCharge&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.AmountPaid&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.AmountPaid&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.BalanceDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.BalanceDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.ServiceFacilityLocation&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.ServiceFacilityLocation&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.BillingProviderPhone#&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.BillingProviderPhone#&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;CGI.MailRoom.Claims.BillingProviderInfo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;CGI.MailRoom.Claims.BillingProviderInfo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIdf96b1ddebb04d159b2d92cd84d66efe&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIdf96b1ddebb04d159b2d92cd84d66efe&quot;:[]}}">
                   <p4:DataExtractionScope.Extractors>
-                    <p4:IntelligentFormExtractor SerializedSignatureFields="{x:Null}" ApiKey="htTF//Kv1thP8S6i3syccKh7MU1YFTSSxpgWqLTe2JaySRarj9S+vgwHDAzz7ljieR5qG+CkVxS/Nx6OR/hPng==" DisplayName="Intelligent Form Extractor" Endpoint="https://intelligentforms.uipath.com/?edition=enterprise" sap:VirtualizedContainerService.HintSize="234,163.333333333333" sap2010:WorkflowViewState.IdRef="IntelligentFormExtractor_1" MinOverlapPercentage="65" PersistenceId="UIdf96b1ddebb04d159b2d92cd84d66efe" SerializedSettings="{}{&quot;DocTypeSettings&quot;:[{&quot;DocumentTypeId&quot;:&quot;CGI.MailRoom.Claims&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]}]}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;CGI.MailRoom.Claims&quot;,&quot;FormId&quot;:&quot;ef61394d&quot;,&quot;FormName&quot;:&quot;New OCR&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,2508.0,3248.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;HEALTH&quot;,&quot;Box&quot;:[197.3045,69.388,178.904,32.6054]},{&quot;Text&quot;:&quot;INSURANCE&quot;,&quot;Box&quot;:[196.4685,267.52,267.5199,34.2775]},{&quot;Text&quot;:&quot;CLAIM&quot;,&quot;Box&quot;:[193.9604,553.432,147.9721,44.3099]},{&quot;Text&quot;:&quot;FORM&quot;,&quot;Box&quot;:[196.4685,710.6,128.744,34.2775]},{&quot;Text&quot;:&quot;APPROVED&quot;,&quot;Box&quot;:[260.8432,69.388,137.104,19.2288]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.InsuredID&quot;,&quot;Box&quot;:[386.129,1570.258,312.5806,69.871]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Name(LastName,FirstName,MiddleInitial)&quot;,&quot;Box&quot;:[481.7419,95.6129,397.1613,66.1935]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientDOB&quot;,&quot;Box&quot;:[503.8065,956.129,301.5484,36.7742]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientAddress&quot;,&quot;Box&quot;:[592.0645,110.3226,485.4194,69.871]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientCity&quot;,&quot;Box&quot;:[687.6774,110.3226,393.4839,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientState&quot;,&quot;Box&quot;:[676.6452,816.3871,99.2903,62.5161]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientZip&quot;,&quot;Box&quot;:[775.9355,110.3226,283.1613,88.2581]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientTelephone&quot;,&quot;Box&quot;:[783.2903,467.0323,382.4516,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientRelationshiptoInsured&quot;,&quot;Box&quot;:[579.4497,947.6083,569.8455,70.4303]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sName&quot;,&quot;Box&quot;:[489.0968,1540.83875,687.6774,51.4839]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sAddress&quot;,&quot;Box&quot;:[588.3871,1537.16125,786.9677,51.4839]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sCity&quot;,&quot;Box&quot;:[684.0,1537.16125,680.3226,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sState&quot;,&quot;Box&quot;:[687.6774,2243.22583,158.129,55.1613]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sZipCode&quot;,&quot;Box&quot;:[790.6452,1529.80652,375.0968,66.1935]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sTelephone&quot;,&quot;Box&quot;:[779.6129,1923.29028,444.9677,69.871]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.InsuredPolicyGrouporFECA#&quot;,&quot;Box&quot;:[889.9355,1577.61292,312.5806,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Employer'sNameorSchoolName&quot;,&quot;Box&quot;:[1088.51611,1559.22583,448.6452,66.1935]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.InsurancePlanNameorProgramName&quot;,&quot;Box&quot;:[1180.45166,1548.19348,393.4839,84.5806]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PriorAuthorizationNumber&quot;,&quot;Box&quot;:[1989.48389,1540.83875,474.3871,55.1613]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.DiagnosisorNatureofIllnessorInjury&quot;,&quot;Box&quot;:[1890.19348,80.9032,1279.742,154.4516]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.FederalTaxIDNumber&quot;,&quot;Box&quot;:[2783.77783,84.4849,401.3033,59.1394]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.SSN-EIN&quot;,&quot;Box&quot;:[2743.35474,518.5161,161.8065,106.6452]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientAccountNo&quot;,&quot;Box&quot;:[2780.129,724.4516,422.9032,55.1613]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.AcceptAssignment&quot;,&quot;Box&quot;:[2776.45166,1162.06445,294.1935,73.5484]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.TotalCharge&quot;,&quot;Box&quot;:[2783.8064,1603.35486,250.0645,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.AmountPaid&quot;,&quot;Box&quot;:[2791.16138,1912.258,242.7097,47.8065]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.BalanceDue&quot;,&quot;Box&quot;:[2787.484,2191.742,235.3548,51.4839]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.ServiceFacilityLocation&quot;,&quot;Box&quot;:[2887.765,720.7787,785.8813,153.4561]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.BillingProviderPhone#&quot;,&quot;Box&quot;:[2853.67749,2015.22583,353.0323,40.4516]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.BillingProviderInfo&quot;,&quot;Box&quot;:[2879.41943,1544.51611,695.0323,161.8065]}],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.Charges&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.Charges.Charges&quot;,&quot;Box&quot;:[2075.90332,1553.70972,223.1613,68.0323]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[2189.90332,1542.67737,241.5484,49.6452]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[2292.871,1542.67737,241.5484,45.9677]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[2388.484,1542.67737,241.5484,53.3226]}]},{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.CPTHCPCS&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.CPTHCPCS.CPTHCPCS&quot;,&quot;Box&quot;:[2101.64526,774.0968,223.1613,38.6129]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[2193.58057,788.8065,186.3871,57.0]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[2292.871,792.4839,190.0645,45.9677]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[2384.8064,796.1613,175.3548,57.0]}]},{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.RenderingProviderID#&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.RenderingProviderID#.RenderingProviderID#&quot;,&quot;Box&quot;:[2072.22583,2120.03223,256.2581,64.3548]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[2189.90332,2094.29028,329.8065,57.0]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[2285.516,2057.516,366.5806,53.3226]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[2388.484,2061.1936,373.9355,57.0]}]}]}]}]">
+                    <p4:IntelligentFormExtractor SerializedSignatureFields="{x:Null}" ApiKey="htTF//Kv1thP8S6i3syccKh7MU1YFTSSxpgWqLTe2JaySRarj9S+vgwHDAzz7ljieR5qG+CkVxS/Nx6OR/hPng==" DisplayName="Intelligent Form Extractor" Endpoint="https://intelligentforms.uipath.com/?edition=enterprise" sap:VirtualizedContainerService.HintSize="234,163.333333333333" sap2010:WorkflowViewState.IdRef="IntelligentFormExtractor_1" MinOverlapPercentage="65" PersistenceId="UIdf96b1ddebb04d159b2d92cd84d66efe" SerializedSettings="{}{&quot;DocTypeSettings&quot;:[{&quot;DocumentTypeId&quot;:&quot;CGI.MailRoom.Claims&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]}]}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;CGI.MailRoom.Claims&quot;,&quot;FormId&quot;:&quot;ef61394d&quot;,&quot;FormName&quot;:&quot;New OCR&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,2508.0,3248.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;HEALTH&quot;,&quot;Box&quot;:[197.3045,69.388,178.904,32.6054]},{&quot;Text&quot;:&quot;INSURANCE&quot;,&quot;Box&quot;:[196.4685,267.52,267.5199,34.2775]},{&quot;Text&quot;:&quot;CLAIM&quot;,&quot;Box&quot;:[193.9604,553.432,147.9721,44.3099]},{&quot;Text&quot;:&quot;FORM&quot;,&quot;Box&quot;:[196.4685,710.6,128.744,34.2775]},{&quot;Text&quot;:&quot;APPROVED&quot;,&quot;Box&quot;:[260.8432,69.388,137.104,19.2288]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.InsuredID&quot;,&quot;Box&quot;:[386.129,1570.258,312.5806,69.871]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Name(LastName,FirstName,MiddleInitial)&quot;,&quot;Box&quot;:[481.7419,95.6129,397.1613,66.1935]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientDOB&quot;,&quot;Box&quot;:[503.8065,956.129,301.5484,36.7742]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientAddress&quot;,&quot;Box&quot;:[592.0645,110.3226,485.4194,69.871]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientCity&quot;,&quot;Box&quot;:[687.6774,110.3226,393.4839,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientState&quot;,&quot;Box&quot;:[676.6452,816.3871,99.2903,62.5161]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientZip&quot;,&quot;Box&quot;:[775.9355,110.3226,283.1613,88.2581]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientTelephone&quot;,&quot;Box&quot;:[783.2903,467.0323,382.4516,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientRelationshiptoInsured&quot;,&quot;Box&quot;:[579.4497,947.6083,569.8455,70.4303]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sName&quot;,&quot;Box&quot;:[481.7419,1533.48389,886.2581,66.1935]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sAddress&quot;,&quot;Box&quot;:[588.3871,1537.16125,786.9677,51.4839]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sCity&quot;,&quot;Box&quot;:[684.0,1537.16125,680.3226,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sState&quot;,&quot;Box&quot;:[687.6774,2243.22583,158.129,55.1613]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sZipCode&quot;,&quot;Box&quot;:[790.6452,1529.80652,375.0968,66.1935]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Insured'sTelephone&quot;,&quot;Box&quot;:[779.6129,1923.29028,444.9677,69.871]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.InsuredPolicyGrouporFECA#&quot;,&quot;Box&quot;:[889.9355,1577.61292,312.5806,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.Employer'sNameorSchoolName&quot;,&quot;Box&quot;:[1088.51611,1559.22583,448.6452,66.1935]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.InsurancePlanNameorProgramName&quot;,&quot;Box&quot;:[1180.45166,1548.19348,393.4839,84.5806]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PriorAuthorizationNumber&quot;,&quot;Box&quot;:[1989.48389,1540.83875,474.3871,55.1613]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.DiagnosisorNatureofIllnessorInjury&quot;,&quot;Box&quot;:[1890.19348,80.9032,1279.742,154.4516]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.FederalTaxIDNumber&quot;,&quot;Box&quot;:[2783.77783,84.4849,401.3033,59.1394]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.SSN-EIN&quot;,&quot;Box&quot;:[2743.35474,518.5161,161.8065,106.6452]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.PatientAccountNo&quot;,&quot;Box&quot;:[2780.129,724.4516,422.9032,55.1613]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.AcceptAssignment&quot;,&quot;Box&quot;:[2787.484,1162.06445,349.3548,55.1613]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.TotalCharge&quot;,&quot;Box&quot;:[2783.8064,1603.35486,250.0645,58.8387]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.AmountPaid&quot;,&quot;Box&quot;:[2791.16138,1912.258,242.7097,47.8065]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.BalanceDue&quot;,&quot;Box&quot;:[2787.484,2191.742,235.3548,51.4839]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.ServiceFacilityLocation&quot;,&quot;Box&quot;:[2887.765,720.7787,785.8813,153.4561]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.BillingProviderPhone#&quot;,&quot;Box&quot;:[2846.32251,1993.16125,382.4516,51.4839]},{&quot;Field&quot;:&quot;CGI.MailRoom.Claims.BillingProviderInfo&quot;,&quot;Box&quot;:[2879.41943,1544.51611,695.0323,161.8065]}],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.Charges&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.Charges.Charges&quot;,&quot;Box&quot;:[2075.90332,1553.70972,223.1613,68.0323]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[2189.90332,1542.67737,241.5484,49.6452]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[2292.871,1542.67737,241.5484,45.9677]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[2388.484,1542.67737,241.5484,53.3226]}]},{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.CPTHCPCS&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.CPTHCPCS.CPTHCPCS&quot;,&quot;Box&quot;:[2101.64526,774.0968,223.1613,38.6129]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[2193.58057,788.8065,186.3871,57.0]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[2292.871,792.4839,190.0645,45.9677]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[2384.8064,796.1613,175.3548,57.0]}]},{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.RenderingProviderID#&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;CGI.MailRoom.Claims.RenderingProviderID#.RenderingProviderID#&quot;,&quot;Box&quot;:[2072.22583,2120.03223,256.2581,64.3548]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[2189.90332,2094.29028,329.8065,57.0]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[2285.516,2057.516,366.5806,53.3226]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[2388.484,2061.1936,373.9355,57.0]}]}]}]}]">
                       <p4:IntelligentFormExtractor.DocumentBounds>
                         <InArgument x:TypeArguments="p6:ResultsDocumentBounds">
                           <DelegateArgumentValue x:TypeArguments="p6:ResultsDocumentBounds">
@@ -505,7 +513,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">290,638.333333333334 290,691</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence sap2010:Annotation.AnnotationText="Move Difrerent column values to Master Sheet " DisplayName="Move Values" sap:VirtualizedContainerService.HintSize="200,112" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence sap2010:Annotation.AnnotationText="Move Difrerent column values to Master Sheet " DisplayName="Move Values" sap:VirtualizedContainerService.HintSize="644,1856" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="FinalFile" />
                   </Sequence.Variables>
@@ -523,13 +531,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </bew:RenameSheet>
-                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="602,968.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Docpath]">
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="602,1075.33333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[Docpath]">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,820" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,926.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_21">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -557,7 +565,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ExcelReadRange>
-                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,158.666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -588,8 +596,8 @@
                             </ui:MultipleAssign.AssignOperations>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:MultipleAssign>
@@ -669,7 +677,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ReadRange AddHeaders="True" DataTable="[FinalDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="384,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Final" WorkbookPath="Final_1020.xlsx">
+                      <ui:ReadRange AddHeaders="True" DataTable="[FinalDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Final" WorkbookPath="[FinalPath]">
                         <ui:ReadRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -681,7 +689,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ReadRange>
-                      <Assign DisplayName="Serialize Object to String" sap:VirtualizedContainerService.HintSize="384,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign DisplayName="Serialize Object to String" sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[StrJSON]</OutArgument>
                         </Assign.To>
@@ -694,28 +702,40 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <ui:WriteTextFile DisplayName="Write JSON file" FileName="DocumentProcessing_Initial.json" sap:VirtualizedContainerService.HintSize="384,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_5" Text="[StrJSON]">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:WriteTextFile>
-                      <ui:ReadTextFile Content="[JSONtxt]" DisplayName="Read Text File" FileName="DocumentProcessing_Initial.json" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:ReadTextFile>
-                      <Assign sap:VirtualizedContainerService.HintSize="384,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_25">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                            <ui:WriteTextFile DisplayName="Write JSON file" FileName="DocumentProcessing_Initial.json" sap:VirtualizedContainerService.HintSize="384,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_5" Text="[StrJSON]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:WriteTextFile>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_26">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                            <ui:ReadTextFile Content="[JSONtxt]" DisplayName="Read Text File" FileName="DocumentProcessing_Initial.json" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ReadTextFile>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
                         <Assign.To>
                           <OutArgument x:TypeArguments="njl:JArray">[tempJsonArray]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="njl:JArray">[JArray.Parse(JSONtxt)]</InArgument>
+                          <InArgument x:TypeArguments="njl:JArray">[JArray.Parse(StrJSON)]</InArgument>
                         </Assign.Value>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -723,7 +743,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="Fill temporary JArrays" sap:VirtualizedContainerService.HintSize="384,717.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[tempJsonArray]">
+                      <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="Fill temporary JArrays" sap:VirtualizedContainerService.HintSize="334,717.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[tempJsonArray]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="njl:JObject">
                             <ActivityAction.Argument>
@@ -764,7 +784,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
-                      <Assign sap:VirtualizedContainerService.HintSize="384,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="njl:JObject">[finalJObject]</OutArgument>
                         </Assign.To>
@@ -777,14 +797,20 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <WriteLine DisplayName="B4 Removing 3 arrays Write Line" sap:VirtualizedContainerService.HintSize="384,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[finalJObject.ToString]">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </WriteLine>
-                      <Sequence DisplayName="Delete old properties" sap:VirtualizedContainerService.HintSize="384,68" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_27">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                            <WriteLine DisplayName="B4 Removing 3 arrays Write Line" sap:VirtualizedContainerService.HintSize="384,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[finalJObject.ToString]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </WriteLine>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <Sequence DisplayName="Delete old properties" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_34">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -822,14 +848,20 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </InvokeMethod>
                       </Sequence>
-                      <WriteLine DisplayName="A4 Removing 3 arrays Write Line" sap:VirtualizedContainerService.HintSize="384,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[finalJObject.ToString]">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </WriteLine>
-                      <Sequence DisplayName="Recreate properties with Arrays" sap:VirtualizedContainerService.HintSize="384,580" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_28">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                            <WriteLine DisplayName="A4 Removing 3 arrays Write Line" sap:VirtualizedContainerService.HintSize="384,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[finalJObject.ToString]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </WriteLine>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <Sequence DisplayName="Recreate properties with Arrays" sap:VirtualizedContainerService.HintSize="334,580" sap2010:WorkflowViewState.IdRef="Sequence_35">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -874,7 +906,7 @@
                           <InArgument x:TypeArguments="njl:JProperty">[new JProperty("RP ID #",rdIdArray)]</InArgument>
                         </InvokeMethod>
                       </Sequence>
-                      <ui:WriteTextFile DisplayName="Write Text File" FileName="Final.json" sap:VirtualizedContainerService.HintSize="384,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_6" Text="[finalJObject.ToString]">
+                      <ui:WriteTextFile DisplayName="Write Text File" FileName="Final.json" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_6" Text="[finalJObject.ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
