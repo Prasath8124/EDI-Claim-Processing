@@ -19,29 +19,69 @@
   "Insurance Plan Name or Program Name": "Humana",
   "Prior Authorization Number": "567890456",
   "Diagnosis or Nature of Illness or Injury": "525 25 1. 3. L 2. 7856 4.",
-  "CPT-HCPCS": [
-    "8934267812",
-    "8934267812",
-    "8934267812"
+  "Federal Tax ID Number": "364246789",
+  "SSN-EIN": "SSN EIN ☐ ☒",
+  "Patient Account No.": "1234",
+  "Accept Assignment": "☐ YES ☒ NO",
+  "Total Charge": "$1020000",
+  "Amount Paid": "O 00",
+  "Balance Due": "$1020000",
+  "Service Facility Location": "Dr. Olya Zahrebelny 636 North Michigan Avenue 3500 C, hicago IL 60610",
+  "Billing Provider Phone #": "( 312 657 3400",
+  "Billing Provider Info": "Dr. Olya Zahrebelny 636 North Michigan Avenue 3500 Chicago, IL 60610",
+  "Date(s) of Service(From)": [
+    "02 21 11",
+    "02 21 11",
+    "02 21 11"
+  ],
+  "Date(s) of Service(To)": [
+    "02 21 11",
+    "02 21 11",
+    "02 21 11"
+  ],
+  "Place of Serivce": [
+    "11",
+    "11",
+    "11"
+  ],
+  "EMG": [
+    "",
+    "",
+    ""
+  ],
+  "CPT/HCPSC": [
+    "21248",
+    "21210",
+    "21089"
+  ],
+  "Modifier": [
+    "",
+    "99 51 52",
+    ""
+  ],
+  "Diagnosis Pointer": [
+    "1",
+    "1",
+    "1"
   ],
   "Charges": [
     "6000 00",
     "3000 00",
     "1200 00"
   ],
-  "RP ID #": [
+  "Days or Units": [
+    "3",
+    "1",
+    "1"
+  ],
+  "EPSDT Family Plan": [
+    "",
+    "",
+    ""
+  ],
+  "Rendering Provider ID #": [
     "8934267812",
     "8934267812",
     "8934267812"
-  ],
-  "Federal Tax ID Number": "364246789",
-  "SSN-EIN": "SSN EIN ☐ ☒",
-  "Patient Account No.": "1234",
-  "Accept Assignment": "(For govt. claims, see back) ☐ YES ☒ NO",
-  "Total Charge": "$10200.00",
-  "Amount Paid": "00",
-  "Balance Due": "$10200.00",
-  "Service Facility Location": "Dr. Olya Zahrebelny 636 North Michigan Avenue 3500 C hicago, IL 60610",
-  "Billing Provider Phone #": "( 312 657 3400",
-  "Billing Provider Info": "Dr. Olya Zahrebelny 636 North Michigan Avenue 3500 Chicago, IL 60610"
+  ]
 }
